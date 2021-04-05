@@ -1,0 +1,1442 @@
+
+
+@font-face {
+  font-family: retro;
+  src: url('./retro.otf');
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: retro;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+html,
+body {
+    height: 100%;
+    padding: 0;
+    scroll-behavior: smooth;
+/*    background: white;*/
+    background-color: #ff48c4;
+}
+
+
+a, a:visited {
+  color: #4d4d4d;
+  text-decoration: underline;
+}
+
+
+
+#graphics {
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+}
+
+
+.container {
+    height: 100%;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    position: absolute;
+    line-height: 1.5;
+    z-index: 1;
+}
+
+
+.container > div {
+    height: 100%;
+    display: block;
+    padding: 0 45px;
+}
+
+
+
+.fixed {
+/*    height: 300px;*/
+/*    height: 1000px;*/
+    height: 100%;
+    width: 100vw;
+    z-index: -1;
+}
+
+
+
+
+.stuck {
+    position: fixed;
+    top: 0;
+}
+
+
+
+/*.text {
+    padding: 0 45px;
+    color: green;
+    opacity: 0.5;
+}*/
+
+
+#deplorable-snowflake {
+    color: black;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    left: 500px;
+}
+
+
+#logo {
+  width: 500px;
+  height: 300px;
+  fill: green;
+/*  position: relative;
+  left: 300px;*/
+  position: absolute;
+  left: 400px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+#opening-title {
+  position: absolute;
+  top: 350px;
+  left: 350px;
+}
+
+.text-decorate {
+  font: italic;
+}
+
+#attribute {
+  position: absolute;
+  top: 500px;
+  left: 550px;
+  color: black;
+}
+
+.text-header {
+    color: blue;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/*#div2 {
+  position: absolute;
+  top: 1000px;
+}*/
+
+
+/* TYPEWRITER */
+/*#typewriterButton {
+  position: absolute;
+  top: 150px;
+}
+
+#typewriter {
+  position: absolute;
+  top: 200px;
+}
+*/
+
+
+/*#sections {
+  position: relative;
+  display: inline-block;
+  width: 400px;
+  top: 300px;
+  z-index: 90;
+  margin-right: 50px;
+}*/
+
+
+/*#happyAside {
+  width: 30%
+  padding-right: 15px;
+  margin-right: 15px;
+  float: left;
+  font-family: serif;
+  background-color: lightgray;
+}*/
+
+
+
+/* SCROLL INDICATOR */
+.header {
+  position: fixed;
+  top: 600px;
+  z-index: 1;
+  width: 75%;
+/*  background-color: #f1f1f1;*/
+  left: 175px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+/*  background: #ccc;*/
+  background: green;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+
+
+.tooltip {
+  border: 1px solid black;
+/*   pointer-events: auto;*/
+}
+
+.tooltipTwo {
+  border: 1px solid black;
+}
+
+.tooltipThree {
+  border: 1px solid black;
+}
+
+
+#divImgurl {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+/*  top: 1500px;
+  left: 65px;*/
+  top: 40px;
+  left: 115px;
+  opacity: 0;
+}
+
+
+#divImgurlTwo {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+/*  top: 1350px;*/
+  top: 45px;
+  left: 115px;
+  opacity: 0;
+}
+
+#divImgurlThree {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+/*  top: 1350px;*/
+  top: 50px;
+  left: 115px;
+  opacity: 0;
+}
+
+#divImgurlFour {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+/*  top: 1500px;
+  left: 1155px;*/
+  top: 40px;
+  left: 995px;
+  opacity: 0;
+}
+
+
+#divImgurlFive {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+/*  top: 1350px;*/
+  top: 45px;
+  left: 995px;
+  opacity: 0;
+}
+
+#divImgurlSix {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+/*  top: 1350px;*/
+  top: 50px;
+  left: 995px;
+  opacity: 0;
+}
+
+
+
+/*#happyVideo {
+  position: absolute;
+  top: 750px;
+  left: 450px;
+}*/
+
+
+
+/*#sections {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  top: 900px;
+  }
+
+.step {
+  margin-bottom: 200px;
+}
+
+
+.chartHappy {
+  display: flex;
+  position: absolute;
+  top: 1250px;
+  margin-left: 300px;
+  padding: 10px;
+  width: 750px;
+  background-color: #C9BEBC;
+}*/
+
+
+
+
+/*ORIGINAL*/
+
+.chartHappy {
+  display: flex;
+/*  margin: 100px;*/
+  margin-top: 25px;
+  margin-left: 100px;
+  width: 1000px;
+  background-color: #C9BEBC;
+  padding: 10px;
+/*  position: absolute;*/
+  top: 1250px; 
+  left: 50px;
+  opacity: 0;
+}
+
+
+
+
+
+/*#startBubble {
+  position: absolute;
+  top: -100px;
+}*/
+
+
+
+.forceTransitionHappy {
+  position: absolute;
+  top: -125px;
+  left: 50px;
+}
+
+
+
+
+
+
+/*#stressVideo {
+  position: absolute;
+  top: 4500px;
+  left: 450px;
+}*/
+
+
+
+
+.chartStress {
+  display: flex;
+  /*  margin: 100px;*/
+  margin-top: -225px;
+  margin-left: 100px;
+  width: 1000px;
+  background-color: #C9BEBC;
+  padding: 10px;
+  /*  position: absolute;*/
+  top: 5000px;
+  left: 50px;
+  opacity: 0;
+}
+
+
+/*#startBubbleStress {
+  position: absolute;
+  top: 6000px;
+}*/
+
+
+.forceTransitionStress {
+  position: absolute;
+  top: -225px;
+  left: 50px;
+}
+
+
+
+
+
+
+/*#eyesVideo {
+  position: absolute;
+  top: 8250px;
+  left: 450px;
+}
+*/
+
+
+
+.chartEyes {
+  display: flex;
+/*  margin: 100px;*/
+  margin-top: -225px;
+  margin-left: 100px;
+  width: 1000px;
+  background-color: #C9BEBC;
+  padding: 10px;
+/*  position: absolute;*/
+  top: 8750px;
+  left: 50px;
+  opacity: 0;
+}
+
+
+/*#startBubbleEyes {
+  position: absolute;
+  top: 9750px;
+}*/
+
+
+.forceTransitionEyes {
+  position: absolute;
+  top: -200px;
+  left: 50px;
+}
+
+
+
+
+/* the blue bar containers */
+.containerTwo {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-content: flex-start;
+  margin: 5px;
+  width: 200px;
+  height: 200px;
+  background-color: #364167;
+}
+
+.containerThree {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-content: flex-start;
+  margin: 5px;
+  width: 200px;
+  height: 200px;
+  background-color: #364167;
+}
+
+.containerFour {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-content: flex-start;
+  margin: 5px;
+  width: 200px;
+  height: 200px;
+  background-color: #364167;
+}
+
+
+
+/* the pink boxes we will transition */
+.box {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  z-index: 0;
+  background-color: #FF7373;
+  position: relative;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px; 
+  transform: scale(0);
+}
+
+
+.boxTwo {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  z-index: 0;
+  background-color: #FF7373;
+  position: relative;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px; 
+  transform: scale(0);
+}
+
+
+.boxThree {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  z-index: 0;
+  background-color: #FF7373;
+  position: relative;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px; 
+  transform: scale(0);
+}
+
+
+
+/*.circle {
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+    z-index: 0;
+    background: #f00;
+    position: relative;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    transform: scale(0);
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  margin: 2px;
+  z-index: 0;
+  background-color: #FF7373;
+  position: relative;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #555;
+  transform: scale(0);
+}*/
+
+
+
+.text {
+    font-size: 10px;
+    color: red;
+    position: relative;
+/*    transform: scale(0);*/
+}
+
+
+
+#typewriterButtonHappy {
+  line-height: 60px;
+  font-weight: bold;
+  padding: 0 40px;
+  background: salmon;
+  /*  border: none;*/
+  cursor: pointer;
+  font-size: 1.5em;
+  /*  position: absolute;*/
+  /* top: 1750px; */
+  /* left: 475px; */
+}
+
+#typewriterHappy {
+/*  position: absolute;*/
+  top: 1900px;
+  left: 500px;
+  color: black;
+  z-index: 9999;
+}
+
+
+
+#typewriterButtonStress {
+  line-height: 60px;
+  font-weight: bold;
+  padding: 0 40px;
+  background: salmon;
+/*  border: none;*/
+  cursor: pointer;
+  font-size: 1.5em;
+/*  position: absolute;*/
+  top: 5500px;
+  left: 475px;
+}
+
+#typewriterStress {
+/*  position: absolute;*/
+  top: 5650px;
+  left: 500px;
+  color: black;
+  z-index: 9999;
+}
+
+
+#typewriterButtonEyes {
+  line-height: 60px;
+  font-weight: bold;
+  padding: 0 40px;
+  background: salmon;
+/*  border: none;*/
+  cursor: pointer;
+  font-size: 1.5em;
+/*  position: absolute;*/
+  top: 9250px;
+  left: 475px;
+}
+
+#typewriterEyes {
+/*  position: absolute;*/
+  top: 9400px;
+  left: 500px;
+  color: black;
+  z-index: 9999;
+}
+
+
+
+
+/*svg {
+  z-index: 9999;
+  position: absolute;
+}
+*/
+
+
+/*DOT*/
+
+.axis path,
+.axis line {
+      fill: none;
+      stroke: #999;
+      shape-rendering: crispEdges;
+}
+
+
+
+#dotHappy {
+  position: absolute;
+/*  top: 0px;*/
+/*  top: -400px;*/
+  top: -200px;
+/*  top: 200px;*/
+}
+
+
+#dotHappy rect {
+      fill: steelblue;
+}
+
+#dotHappy text {
+      fill: white;
+      font: 10px sans-serif;
+      text-anchor: end;
+}
+
+.dot {
+      stroke: none;
+}
+
+
+
+
+#dotStress {
+  position: absolute;
+/*  top: 6750px;*/
+  top: -300px;
+}
+
+
+#dotStress rect {
+      fill: steelblue;
+}
+
+#dotStress text {
+      fill: white;
+      font: 10px sans-serif;
+      text-anchor: end;
+}
+
+.dotStress {
+      stroke: none;
+}
+
+/*.tooltipTwoStress {
+      border: 1px solid black;
+}*/
+
+
+
+#dotEyes {
+  position: absolute;
+/*  top: 10500px;*/
+  top: -400px;
+}
+
+
+#dotEyes rect {
+      fill: steelblue;
+}
+
+#dotEyes text {
+      fill: white;
+      font: 10px sans-serif;
+      text-anchor: end;
+}
+
+.dotEyes {
+      stroke: none;
+}
+
+/*.tooltipTwoEyes {
+      border: 1px solid black;
+}*/
+
+
+
+
+/*TABLE*/
+
+
+#tableWrapper {
+/*  position: absolute;
+  top: 100px;*/
+/*  opacity: 0;*/
+}
+
+
+
+
+#state_selection {
+  position: absolute;
+  top: 0px;
+  left: 100px;
+}
+
+.control {
+  float: left;
+  padding-left: 20px;
+}
+
+.control a {
+  color: black;
+  font-size: 12px;
+  padding: 5px;
+  background: #E2E2E2;
+  cursor: pointer;
+  margin-right: 3px;
+  text-decoration: none;
+}
+
+.control a:hover {
+  text-decoration: underline;
+}
+
+.control a.active {
+  color: white;
+  background: #555;
+}
+
+#controls {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+
+/* Dropdown*/
+.col-md-4 {
+  text-align: center;
+  position: absolute;
+  top: 100px;
+}
+
+#country {
+  position: absolute;
+  font-size: 15px;
+  top: -50px;
+  left: 50px;
+  opacity: 0;
+}
+
+#state {
+  position: absolute;
+  font-size: 15px;
+  top: -50px;
+  left: 400px;
+  opacity: 0;
+}
+
+#city {
+  position: absolute;
+  font-size: 15px;
+  top: -50px;
+  left: 750px;
+  opacity: 0;
+}
+
+#country-dropdown {
+  position: absolute;
+  top: 0px;
+  left: 50px;
+}
+
+
+#state-dropdown {
+  position: absolute;
+  top: 0px;
+  left: 400px;
+}
+
+#city-dropdown {
+  position: absolute;
+  top: 0px;
+  left: 750px;
+}
+
+
+/*Buttons*/
+
+#hybridButton {
+  position: absolute;
+  top: 200px;
+  left: 175px;
+  opacity: 0;
+}
+
+#sativaButton {
+  position: absolute;
+  top: 200px;
+  left: 275px;
+  opacity: 0;
+}
+
+#indicaButton {
+  position: absolute;
+  top: 200px;
+  left: 375px;
+  opacity: 0;
+}
+
+
+
+/*Slider*/
+
+#sliderLabel {
+  position: absolute;
+  top: 180px;
+  left: 510px;
+  opacity: 0;
+}
+
+#sliderAmount {
+  position: absolute;
+  top: 180px;
+  left: 750px;
+  width: 50px;
+  opacity: 0;
+}
+
+#slider-range {
+/*  position: absolute;
+  width: 300px;
+  margin-top: 10px;*/
+/*  position: absolute;
+  top: 8150px;
+  left: 600px;*/
+}
+
+
+#slider-range, #slider-range2 {
+  width:300px;
+/*  width:50px;*/
+  margin-top:10px;
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  opacity: 0;
+
+}
+
+#slider-range2.ui-slider-horizontal {
+    border: 0 none;
+}
+
+#slider-range2.ui-slider-horizontal .ui-slider-range, #slider-range2.ui-slider-horizontal .ui-slider-handle {
+    background: url("http://unbug.ru/examples/jquery/slider/slide.png") repeat scroll 0 0 transparent;
+}
+
+#slider-range2.ui-slider-horizontal .ui-slider-range {
+    background-position: 0 -42px;
+    background-repeat: repeat-x;
+    height: 21px;
+}
+
+#slider-range2.ui-slider-horizontal .ui-slider-handle {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 0 none;
+    height: 21px;
+    top: 0;
+    width: 21px;
+}
+
+#slider-range2.ui-slider-horizontal .ui-slider-handle:focus {
+    outline: 0 none;
+}
+
+#slider-range2.ui-slider-horizontal .ui-slider-handle + .ui-slider-handle {
+    background-position: -21px 0;
+}
+
+
+
+/*Search*/
+
+#myInput {
+/*  background-image: url('/css/search_icon.jpg');*/
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  /*width: 100%;*/
+  width: 200px;
+  height: 10px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  position: absolute;
+  top: 200px;
+  left: 900px;
+  opacity: 0;
+}
+
+
+
+/*#phenotypes {
+  position: absolute;
+  top: 150px;
+}
+
+#thc {
+  position: absolute;
+  top: 150px;
+  left: 400px;
+}
+
+
+#search_section {
+  position: absolute;
+  top: 170px;
+  left: 800px;
+}*/
+
+
+
+
+#tableID {
+/*  position: relative;*/
+  width: 100%;
+/*  margin-top: 350px;*/
+  overflow-x: scroll;
+  font-size: 15px;
+/*  top: 12250px;*/
+/*  position: absolute;*/
+/*  opacity: 0;*/
+}
+
+
+#myTable {
+  opacity: 0;
+}
+
+
+.divScroll {
+  overflow-y: scroll;
+  width: 10px;
+  height: 500px;
+}
+
+
+th {
+  background-color: white;
+  color: black;
+  height: 10px;
+  vertical-align: bottom;
+  text-align: left;
+  padding: 1px 4px;
+}
+
+
+td {
+  height: 50px;
+  vertical-align: bottom;
+  text-align: left;
+  padding: 1px 4px;
+}
+
+
+tr:hover {background-color: #f5f5f5;}
+
+tr:nth-child(odd) {background-color: #f2f2f2;}
+
+
+tbody tr:first-child td,
+text {
+  font-weight: bold;
+}
+
+.row {
+  margin-top: 50px;
+}
+
+#select3 {
+  position: relative;
+  height: 32px;
+  font-size: 15px;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 300px;
+  float: left;
+}
+
+#select4 {
+  position: relative;
+  height: 32px;
+  font-size: 15px;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 300px;
+  float: left;
+}
+
+#select5 {
+  position: relative;
+  height: 32px;
+  font-size: 15px;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 300px;
+  float: left;
+}
+
+
+#nameTable {
+  color: grey;
+}
+
+#ratingTable {
+  color: grey;
+}
+
+#reviewTable {
+  color: grey;
+}
+
+#phenotypeTable {
+  color: grey;
+}
+
+#thcTable {
+  color: grey;
+}
+
+#cbdTable {
+  color: grey;
+}
+
+#cityTable {
+  color: grey;
+}
+
+#stateTable {
+  color: grey;
+}
+
+#countryTable {
+  color: grey;
+}
+
+#adhdTable {
+  color: grey;
+}
+
+#anorexiaTable {
+  color: grey;
+}
+
+#anxietyTable {
+  color: grey;
+}
+
+#anxiousTable {
+  color: grey;
+}
+
+#arousedTable {
+  color: grey;
+}
+
+#arthritisTable {
+  color: grey;
+}
+
+#asthmaTable {
+  color: grey;
+}
+
+#cancerTable {
+  color: grey;
+}
+
+#crampsTable {
+  color: grey;
+}
+
+#creativeTable {
+  color: grey;
+}
+
+#depressionTable {
+  color: grey;
+}
+
+#dizzyTable {
+  color: grey;
+}
+
+#energeticTable {
+  color: grey;
+}
+
+#epilepsyTable {
+  color: grey;
+}
+
+#euphoricTable {
+  color: grey;
+}
+
+#fatigueTable {
+  color: grey;
+}
+
+#fibromyalgiaTable {
+  color: grey;
+}
+
+#focusedTable {
+  color: grey;
+}
+
+#gigglyTable {
+  color: grey;
+}
+
+#happyTable {
+  color: grey;
+}
+
+#headacheTable {
+  color: grey;
+}
+
+#headachesTable {
+  color: grey;
+}
+
+#hungryTable {
+  color: grey;
+}
+
+#hypertensionTable {
+  color: grey;
+}
+
+#inflammationTable {
+  color: grey;
+}
+
+#insomniaTable {
+  color: grey;
+}
+
+#migrainesTable {
+  color: grey;
+}
+
+#nauseaTable {
+  color: grey;
+}
+
+#pmsTable {
+  color: grey;
+}
+
+#ptsdTable {
+  color: grey;
+}
+
+#painTable {
+  color: grey;
+}
+
+#paranoidTable {
+  color: grey;
+}
+
+#relaxedTable {
+  color: grey;
+}
+
+#seizuresTable {
+  color: grey;
+}
+
+#sleepyTable {
+  color: grey;
+}
+
+#spasticityTable {
+  color: grey;
+}
+
+#stressTable {
+  color: grey;
+}
+
+#talkativeTable {
+  color: grey;
+}
+
+#tinglyTable {
+  color: grey;
+}
+
+#upliftedTable {
+  color: grey;
+}
+
+#appetiteTable {
+  color: grey;
+}
+
+#diseaseTable {
+  color: grey;
+}
+
+#disorderTable {
+  color: grey;
+}
+
+#eyesTable {
+  color: grey;
+}
+
+#injuryTable {
+  color: grey;
+}
+
+#mouthTable {
+  color: grey;
+}
+
+#pressureTable {
+  color: grey;
+}
+
+#sclerosisTable {
+  color: grey;
+}
+
+#spasmsTable {
+  color: grey;
+}
+
+
+line.link {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+
+
+/****************************************************** RESPONSIVE ***********************************/
+
+
+@media (max-width: 1700px) {
+
+
+
+}
+
+
+
+/* IPHONE 5/SE MISSLES */
+
+@media screen and (min-width: 319px) and (max-width: 321px) and (min-height: 567px) and (max-height: 569px) {
+
+#deplorable-snowflake {
+    color: black;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    left: 175px;
+/*    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;*/
+}
+
+#logo {
+    width: 500px;
+    height: 300px;
+    fill: green;
+    position: absolute;
+    left: 50px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#opening-title {
+    position: absolute;
+    top: 350px;
+    left: 200px;
+}
+
+
+#attribute {
+    position: absolute;
+    top: 700px;
+    left: 275px;
+    color: black;
+}
+
+
+.progress-container {
+    width: 45%;
+    height: 8px;
+    /* background: #ccc; */
+    background: green;
+    position: fixed;
+    top: 900px;
+    left: 50px;
+}
+
+
+#happyVideo {
+    position: absolute;
+    left: 125px;
+    top: 1000px;
+}
+
+
+
+}
+
+
+
+
+/* Responsive */
+
+video#eyesVideo, video#stressVideo {
+  position: absolute;
+  left: 450px;
+  max-width: 100%;
+}
+
+
+@media (max-width: 860px) {
+  .header, #deplorable-snowflake, svg#logo {
+      left: 10px;
+  } 
+
+  svg#logo {
+      max-width: 80%;
+  }
+
+  .header {
+      bottom: 10px;
+      top: initial;
+  }
+
+  #opening-title {
+      left: 10px;
+  }
+
+  #attribute {
+      left: 50px;
+  }
+
+
+  video#happyVideo {
+      position: absolute;
+      left: 10px;
+      max-width: 100%;
+
+  }
+
+  .chartHappy {
+      /* left: 10px !important; */
+      margin-left: 0;
+  }
+
+  video#eyesVideo, video#stressVideo {
+      left: 10px;
+  }
+
+  .sticky-wrapper {
+      width: 100%;
+  }
+
+  .sticky-wrapper > .fixed > div {
+      max-width: 100%;
+  }
+
+  .sticky-wrapper > .fixed.stuck {
+      bottom: 0;
+      left: 0;
+  }
+}
+
+
+@media (max-width: 500px) {
+  div.squareChartWrapper {
+      transform: scale(0.33) translate(-90%);
+      max-width: initial;
+  }
+  #attribute {
+    top: 550px;
+  }
+
+  /*
+  div#happyTime {
+      position: absolute;
+      top: 0;
+      height: 100%;
+  }*/
+
+  div#happyBubble, div#stressBubble, div#eyesBubble {
+      transform: translate(0, 50%);
+  }
+
+  svg.happyDotSvg, svg.stressDotSvg, svg.eyesDotSvg {
+      position: absolute;
+      width: 200%;
+      left: 0;
+      /* bottom: 0; */
+  }
+}

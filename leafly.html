@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Leafly: A Marijuana Visual Aide</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Visualize close to 3000 marijuana strains.">
+<!--   <meta name="viewport" content="initial-scale=1, maximum-scale=1"> -->
+  <meta name="viewport" content="user-scalable=yes">
+  <meta name="keywords" content="leafly, marijuana, pot, visualization, data visualization, strains, thc, cbd, effects, high, weed">
+  <meta name="news_keywords" content="leafly, marijuana, pot, visualization, data visualization, strains, thc, cbd, effects, high, weed">
+
+  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
+
+  <link href='../static/data/leafly/Frontend/css/leafly.css' rel='stylesheet' type='text/css'>
+
+  <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"></script>
+
+
+
+
+</head>
+
+
+<body>
+
+  {% block content %}
+
+
+<!--   <div id="graphics"> -->
+
+    <div id="container" class="container">
+
+
+
+      <!-- ABOVE THE FOLD -->
+
+
+      <a href="https://www.deplorablesnowflake.org/index" id="deplorable-snowflake"
+        target="_blank">DeplorableSnowflake</a>
+
+      <br>
+      <br>
+
+
+      <!--Title-->
+      <svg id="logo" viewBox="0 0 288.15 112.94">
+        <title>Leafly</title>
+        <path
+          d="M281.28 87.61c-4.1 0-7-3-7-7.28s2.87-7.28 7-7.28 6.87 3 6.87 7.28-2.77 7.28-6.87 7.28zM154.64 24.56l-.94 8.59c-3.24-6.47-10.31-9.82-18.71-9.82-16.07 0-28.81 12.73-28.81 32.14s12.36 32.14 28.19 32.14c9.77 0 16-4.58 19.16-10.11l1.11 8.88H166V24.56zM136 76.12c-10.5 0-18-8.64-18-20.9s7.34-20.9 18-20.9 17.58 8.51 17.58 20.9-7.13 20.9-17.58 20.9zM212.15 0v72.54s0 13.89 15.53 13.89h6.6v-11h-5.65c-2.59 0-4.14-2-4.14-7V0z"
+          class="cls-1"></path>
+        <path
+          d="M288.15 24.56l-23.27 68.8c-3.58 11-9.75 19.58-22.89 19.58a21.31 21.31 0 01-14.85-6l5.2-9a14.81 14.81 0 009.16 3.59c5.19 0 9.15-4.46 11-9.9l1.73-5.2h-3.9l-21.65-61.87h13.73l16.1 49.65h.19l16.21-49.65zM44 75.43v11H0V0h12.36v75.43zm58-16.84H55.63c1 11 6.93 18.31 18.68 18.31 5.82 0 11.88-3 14.48-9H101c-3.09 13-15.19 19.79-26.84 19.79-19 0-30.81-12.86-30.81-32.41 0-18.81 12.87-31.92 29.82-31.92 15.42 0 28.75 9.49 28.83 31.28v3.95zm-12-9.53c-.22-8.16-6.28-15.46-16.43-15.46-9.16 0-15.59 6.06-17.44 15.46zM198.67 11H208V0h-13.5c-9.07 0-15 6.89-15 15.49v9.07h-9.37V35h9.37v51.43h12.4L192 35h15.4V24.56H192v-6.69c-.1-5.25 2.36-6.87 6.67-6.87z"
+          class="cls-1"></path>
+      </svg>
+
+
+      <br>
+
+
+      <h1 id="opening-title">Exploring the World's <br> <span class="text-decorate"> LARGEST </span> Marijuana Database.</h1>
+
+      <!-- <h3 id="opening-title-2"></h3> -->
+
+
+      <a href="https://www.linkedin.com/in/william-stevens-930b2032/" id="attribute" target="_blank">By William
+        Stevens</a>
+
+
+<!--       <button id="typewriterButtonHappy" onclick="typewriterHappy()">Click me</button>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <p id="typewriterHappy"></p> -->
+
+
+  <!-- BELOW THE FOLD -->
+
+
+  <div class="fixed">
+
+
+
+    <!--SCROLL INDICATOR ADD BACK IN ???-->   
+<!--       <div class="header">
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div>
+      </div> -->
+
+
+
+        <!--HAPPY-->
+        <div id="happyTime">
+
+
+          <!--HAPPY VIDEO-->
+          <!-- <video controls id="happyVideo" autoplay loop muted>
+    <source src="/Frontend/assets/video/happy.mp4" type="video/mp4">
+</video> -->
+
+
+          <!--HAPPY WAFFLE-->
+          <div class="squareChartWrapper">
+            <div class="chartHappy"></div>
+
+
+            <!--TOOLTIP HAPPY-->
+            <img id="divImgurl" src="" alt="" />
+            <img id="divImgurlFour" src="" alt="" />
+          </div>
+
+          <!--HAPPY TYPEWRITER-->
+          <!-- <button id="typewriterButtonHappy" onclick="typewriterHappy()">Click me</button>
+<p id="typewriterHappy"></p> -->
+
+
+          <!--HAPPY FORCE-->
+          <div id="startBubble"></div>
+          <div id="happyBubble"></div>
+
+          <!--HAPPY DOT-->
+          <div id="dotHappy"></div>
+
+        </div>
+        
+        <!--Happy Time-->
+
+
+
+
+        <!--STRESS-->
+        <div id="stressTime">
+
+
+          <!--STRESS VIDEO-->
+          <!-- <video controls id="stressVideo" autoplay loop muted>
+    <source src="/Frontend/assets/video/stress.mp4" type="video/mp4">
+</video> -->
+
+
+          <!--STRESS WAFFLE-->
+          <div class="squareChartWrapper">
+            <div class="chartStress"></div>
+
+
+            <!--TOOLTIP STRESS-->
+            <img id="divImgurlTwo" src="" alt="" />
+            <img id="divImgurlFive" src="" alt="" />
+          </div>
+
+          <!--STRESS TYPEWRITER-->
+          <!-- <button id="typewriterButtonStress" onclick="typewriterStress()">Click me</button>
+<p id="typewriterStress"></p> -->
+
+          <!--STRESS FORCE-->
+          <div id="startBubbleStress"></div>
+          <div id="stressBubble"></div>
+
+          <!--STRESS DOT-->
+          <div id="dotStress"></div>
+
+        </div>
+        <!--Stress Time-->
+
+
+
+
+
+        <!--EYES-->
+        <div id="eyesTime">
+
+          <!--EYES VIDEO-->
+          <!-- <video controls id="eyesVideo" autoplay loop muted>
+    <source src="/Frontend/assets/video/eyes.mp4" type="video/mp4">
+</video> -->
+
+          <!--EYES WAFFLE-->
+          <div class="squareChartWrapper">
+            <div class="chartEyes"></div>
+
+            <!--TOOLTIP EYES-->
+            <img id="divImgurlThree" src="" alt="" />
+            <img id="divImgurlSix" src="" alt="" />
+          </div>
+
+          <!--EYES TYPEWRITER-->
+          <!-- <button id="typewriterButtonEyes" onclick="typewriterEyes()">Click me</button>
+<p id="typewriterEyes"></p> -->
+
+          <!--EYES FORCE-->
+          <div id="startBubbleEyes"></div>
+          <div id="eyesBubble"></div>
+
+          <!--EYES DOT-->
+          <div id="dotEyes"></div>
+
+        </div>
+        <!--Eyes Time-->
+
+
+
+  </div>
+  <!--fixed-->
+
+
+      <!--STARTS SCROLLYTELLING-->
+
+      <div class="header">
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div>
+      </div>
+
+      <button id="typewriterButtonHappy" onclick="typewriterHappy()">Click me</button>
+      <p id="typewriterHappy"></p>
+
+      <video controls id="happyVideo" autoplay loop muted>
+        <source src="../static/data/leafly/Frontend/assets/video/happy.mp4" type="video/mp4">
+      </video>
+
+      <section id="div2">
+        <h2 class="text-header">Which Cities in North America <br> are the Pot Head Capitals of the World?</h2>
+      </section>
+
+      <section id="div3">
+      </section>
+
+      <section id="div4">
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+<!--       <button id="typewriterButtonHappy" onclick="typewriterHappy()">Click me</button> -->
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+<!--       <p id="typewriterHappy"></p> -->
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div5">
+        <p>
+          The top 10 cities with the largest selection of marijuana strains includes <br> <b>Vancouver, Tulsa, Spokane, Seattle, Portland, Oklahoma City, Denver, Everett, Eugene and Salem.</b>
+          <br>
+          <br>
+        </p>
+      </section>
+
+      <section id="div6">
+      </section>
+
+      <section id="div7">
+        <p>
+          Each adjacent compartment contains boxes with each city's <b>HAPPIEST</b> strain rating - <br> according to the average of user-uploaded data.
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          Each subsequent visualization will illustrate data pertaining to these top 10 "up in smoke" cities. 
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </p>
+      </section>
+
+      <section id="div8">
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+ 
+
+      <section id="div9">
+      </section>
+
+      <section id="div10">
+
+      </section>
+
+      <section id="div11">
+        <p>
+          If waffle charts aren't your jam, here the happiest strains are broken down a la clustered force layout. 
+          <br>
+          <br>
+        </p>
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div12">
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div13">
+      </section>
+
+      <section id="div14">
+        <p>
+          And a dot plot histogram for good measure. 
+          <br>
+          <br>
+        </p>
+      </section>
+
+      <section id="div15">
+      </section>
+
+     
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+      <video controls id="stressVideo" autoplay loop muted>
+        <source src="../static/data/leafly/Frontend/assets/video/stress.mp4" type="video/mp4">
+      </video>
+
+      <section id="div16">
+      </section>
+
+      <section id="div17">
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div18">
+      </section>
+
+      <section id="div19">
+      </section>
+
+      <section id="div20">
+        <p>
+          Cool cool cool. But which strains help the most with <b>STRESS?</b>
+        </p>
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+<!-- 
+      <button id="typewriterButtonStress" onclick="typewriterStress()">Click me</button> -->
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+<!--       <p id="typewriterStress"></p> -->
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div21">
+      </section>
+
+      <section id="div22">
+      </section>
+
+      <section id="div23">
+        <p>
+          Stress stinks. But with strains like Wolfberry and Cheese Dawg, you really can't go wrong. 
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </p>
+      </section>
+
+      <section id="div24">
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div25">
+      </section>
+
+      <section id="div26">
+      </section>
+
+      <section id="div27">
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div28">
+        <p> I always thought Orange Crush was a soft drink.
+          <br>
+          <br>
+        </p>
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div29">
+      </section>
+
+      <section id="div30">
+      </section>
+
+      <section id="div31">
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+      <video controls id="eyesVideo" autoplay loop muted>
+        <source src="../static/data/leafly/Frontend/assets/video/eyes.mp4" type="video/mp4">
+      </video>
+
+      <section id="div32">
+      </section>
+
+      <section id="div33">
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div34">
+      </section>
+
+      <section id="div35">
+      </section>
+
+      <section id="div36">
+        <p>
+          But which strains should I avoid? I hate when my eyes get all <b>DRY AND VAMPIRE-LIKE.</b>
+        </p>
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+<!--       <button id="typewriterButtonEyes" onclick="typewriterEyes()">Click me</button> -->
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+<!--       <p id="typewriterEyes"></p> -->
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div37">
+      </section>
+
+      <section id="div38">
+        <p>
+        </p>
+      </section>
+
+      <section id="div39">
+        <p>
+          Maybe it's time to lay off the Bermuda Sour ...
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </p>
+      </section>
+
+      <section id="div40">
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div41">
+      </section>
+
+      <section id="div42">
+      </section>
+
+      <section id="div43">
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div44">
+        <p> And replace it with some of that good old-fashioned Spokane Jungle Juice. 
+          <br>
+          <br>
+        </p>
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div45">
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section id="div46">
+      </section>
+
+      <section id="div47">
+      </section>
+
+      <section id="div48">
+      </section>
+
+      <section id="div49">
+      </section>
+
+      <section id="div50">
+        <p>
+          Finis.
+          <br>
+          <br>
+          Scroll back up for an additional showing. 
+          <br>
+          <br>
+          Bring a White Castle crave case with you this time.  
+        </p>
+      </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+  </div>
+<!--container-->
+
+
+
+
+
+<!--   </div> -->
+  <!--graphic -->
+
+
+
+
+  <script src="../static/data/leafly/Frontend/js/happy.js"></script>
+  <script src="../static/data/leafly/Frontend/js/visHappy.js"></script>
+  <script src="../static/data/leafly/Frontend/js/visHappyTwo.js"></script>
+  <script src="../static/data/leafly/Frontend/js/dotHappy.js"></script>
+  <script src="../static/data/leafly/Frontend/js/stress.js"></script>
+  <script src="../static/data/leafly/Frontend/js/visStress.js"></script>
+  <script src="../static/data/leafly/Frontend/js/visStressTwo.js"></script>
+  <script src="../static/data/leafly/Frontend/js/dotStress.js"></script>
+  <script src="../static/data/leafly/Frontend/js/eyes.js"></script>
+  <script src="../static/data/leafly/Frontend/js/visEyes.js"></script>
+  <script src="../static/data/leafly/Frontend/js/visEyesTwo.js"></script>
+  <script src="../static/data/leafly/Frontend/js/dotEyes.js"></script>
+  <script src="../static/data/leafly/Frontend/js/update.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+
+
+  console.log(window.innerWidth, "windowsize");
+
+    //////////////////////////////////////// ON PAGE LOAD
+
+
+
+
+    var happyTooltipBodyLoad = function (d) {
+
+      var tooltipHappyLoad = d3.select(".chartHappy")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltipHappyLoad")
+        .style("width", "0px")
+        .style("height", "0px")
+
+      htmlTextHappyLoad = d3.select("#divImgurl").attr("src", '../static/data/leafly/Backend/python_scripts/assets/data/potleaf.jpg')
+
+      tooltipHappyLoad
+        .html(htmlTextHappyLoad)
+
+
+      var tooltipHappyLoadTwo = d3.select(".chartHappy")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltipHappyLoadTwo")
+        .style("width", "0px")
+        .style("height", "0px")
+
+      htmlTextHappyLoadTwo = d3.select("#divImgurlFour").attr("src", '../static/data/leafly/Backend/python_scripts/assets/data/happy.png')
+
+      tooltipHappyLoadTwo
+        .html(htmlTextHappyLoadTwo)
+
+
+    }
+
+
+
+
+    var stressTooltipBodyLoad = function (d) {
+
+      var tooltipStressLoad = d3.select(".chartStress")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltipStressLoad")
+        .style("width", "0px")
+        .style("height", "0px")
+
+      htmlTextStressLoad = d3.select("#divImgurlTwo").attr("src", '../static/data/leafly/Backend/python_scripts/assets/data/potleaf.jpg')
+
+      tooltipStressLoad
+        .html(htmlTextStressLoad)
+
+
+      var tooltipStressLoadTwo = d3.select(".chartStress")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltipStressLoadTwo")
+        .style("width", "0px")
+        .style("height", "0px")
+
+      htmlTextStressLoadTwo = d3.select("#divImgurlFive").attr("src", '../static/data/leafly/Backend/python_scripts/assets/data/anxious.png')
+
+      tooltipStressLoadTwo
+        .html(htmlTextStressLoadTwo)
+
+    }
+
+
+    var eyesTooltipBodyLoad = function (d) {
+
+      var tooltipEyesLoad = d3.select(".chartEyes")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltipEyesLoad")
+        .style("width", "0px")
+        .style("height", "0px")
+
+      htmlTextEyesLoad = d3.select("#divImgurlThree").attr("src", '../static/data/leafly/Backend/python_scripts/assets/data/potleaf.jpg')
+
+      tooltipEyesLoad
+        .html(htmlTextEyesLoad)
+
+
+
+      var tooltipEyesLoadTwo = d3.select(".chartEyes")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltipEyesLoadTwo")
+        .style("width", "0px")
+        .style("height", "0px")
+
+      htmlTextEyesLoadTwo = d3.select("#divImgurlSix").attr("src", '../static/data/leafly/Backend/python_scripts/assets/data/stoned.jpg')
+
+      tooltipEyesLoadTwo
+        .html(htmlTextEyesLoadTwo)
+
+
+
+    }
+
+
+
+    // d3.select(window).on("load", happyTooltipBodyLoad);
+
+
+
+    window.addEventListener("load", myInit, true);
+
+
+    function myInit() {
+
+      happyTooltipBodyLoad();
+      stressTooltipBodyLoad();
+      eyesTooltipBodyLoad();
+
+    };
+
+
+
+
+    //////////////////////////////////////// PROGRESS SCROLL
+
+
+    // When the user scrolls the page, execute myFunction 
+
+    window.onscroll = function () { myFunction() };
+
+    function myFunction() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";
+    }
+
+
+
+    //////////////////////////////////////// TYPEWRITER 
+
+
+    /// Happy Typewriter
+    var i = 0;
+    var txt = 'All data was scraped from Leafly.com where it was then cleaned, analyzed and visualized for your liking. Please consider watching on desktop for an optimum viewing experience. Enoy the show.';
+    var speed = 50;
+
+
+    function typewriterHappy() {
+
+      if (i < txt.length) {
+        document.getElementById("typewriterHappy").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typewriterHappy, speed);
+      }
+
+      d3.select("#typewriterHappy").transition().duration(2000).style("opacity", 1)
+    }
+
+    var lastScrollTop = 0;
+    window.addEventListener("scroll", function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (st < lastScrollTop) {
+        d3.select("#typewriterHappy").style("opacity", 0)
+      }
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    }, false);
+
+
+
+    /// Stress Typewriter
+    var j = 0;
+    var txtTwo = 'Please Consider Watching on Desktop for an Optimum Viewing Experience.';
+    var speedTwo = 50;
+
+
+    function typewriterStress() {
+
+      if (j < txtTwo.length) {
+        document.getElementById("typewriterStress").innerHTML += txtTwo.charAt(j);
+        j++;
+        setTimeout(typewriterStress, speedTwo);
+      }
+
+      d3.select("#typewriterStress").transition().duration(2000).style("opacity", 1)
+    }
+
+    var lastScrollTopTwo = 0;
+    window.addEventListener("scroll", function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (st < lastScrollTopTwo) {
+        d3.select("#typewriterStress").style("opacity", 0)
+      }
+      lastScrollTopTwo = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    }, false);
+
+
+    /// Eyes Typewriter
+    var k = 0;
+    var txtThree = 'Please Consider Watching on Desktop for an Optimum Viewing Experience.';
+    var speedThree = 50;
+
+
+    function typewriterEyes() {
+
+      if (k < txtThree.length) {
+        document.getElementById("typewriterEyes").innerHTML += txtThree.charAt(k);
+        k++;
+        setTimeout(typewriterEyes, speedThree);
+      }
+
+      d3.select("#typewriterEyes").transition().duration(2000).style("opacity", 1)
+    }
+
+    var lastScrollTopThree = 0;
+    window.addEventListener("scroll", function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (st < lastScrollTopThree) {
+        d3.select("#typewriterEyes").style("opacity", 0)
+      }
+      lastScrollTopThree = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    }, false);
+
+
+
+
+
+
+
+    /////////////////////////////////////////////////////////////////////// GREENSOCK STICKY
+
+
+    // var stickyHappy = document.querySelectorAll(".chartHappy");
+
+
+    // stickyHappy.forEach(elem => {
+    //     const rect = elem.getBoundingClientRect();
+    //   const top = rect.top;
+    //     const y = gsap.getProperty(elem, "y");
+    //   if(top <= 0 || y > 0) {
+    //       gsap.set(elem, {y: scroller.y - elem.offsetTop});
+    //     }
+
+    // });
+
+
+
+
+
+
+    /////////////////////////////////////////////////////////////////////// WAYPOINTS 
+    var sticky = new Waypoint.Sticky({
+      element: $('.fixed')[0]
+    })
+
+    /////////////////////////////////////////////////////////////// HAPPY 
+
+    // var waypointKillHappy = new Waypoint({
+    //     element: document.getElementById('div1'),
+    //     handler: killHappy,
+    //     offset: 50
+    //     // offset: "bottom-in-view"
+    // })
+    var waypoint = new Waypoint({
+      element: document.getElementById('div2'),
+      handler: function (direction) {
+        happy();
+      },
+      offset: '10%'
+    })
+
+
+    var waypointResetHappy = new Waypoint({
+      element: document.getElementById('div2'),
+      handler: resetVizTop,
+      offset: "50%",
+      // offset: "bottom-in-view"
+    })
+
+    var waypointTwo = new Waypoint({
+      element: document.getElementById('div8'),
+      handler: function (direction) {
+        updateOne();
+
+        if(window.innerWidth >= 1024) {
+          forceHappyBubble();
+          console.log("SVG");
+        } else {
+          forceHappyBubbleTwo();
+          console.log("CANVAS");
+         }
+        },
+      // },
+      // offset: '1%'
+      offset: '10%'
+      // offset: '50%'
+      // offset: '90%'
+      // offset: 'bottom-in-view'
+      // offset: -25
+      // offset: function() {
+      //   return -this.element.clientHeight
+      // }
+    })
+
+
+    var waypointResetBubble = new Waypoint({
+      element: document.getElementById('div8'),
+      handler: resetVizBubble,
+      offset: "10%"
+    })
+
+
+
+    var waypointThree = new Waypoint({
+      element: document.getElementById('div13'),
+      handler: function (direction) {
+        updateTwo();
+        happyDot();
+      },
+      offset: '50%'
+      // offset: '90%'
+    })
+
+
+    ///////////////////////////////////////////////////////////// STRESS
+
+    var waypointKillStress = new Waypoint({
+      element: document.getElementById('div16'),
+      handler: killStress,
+      offset: "50%",
+      // offset: "bottom-in-view"
+    })
+
+
+    var waypointFour = new Waypoint({
+      element: document.getElementById('div18'),
+      handler: function (direction) {
+        // updateTwo();
+        stress();
+      },
+      offset: '10%'
+    })
+
+
+    var waypointResetStress = new Waypoint({
+      element: document.getElementById('div18'),
+      handler: resetVizStress,
+      offset: "50%"
+      // offset: "bottom-in-view"
+    })
+
+
+    var waypointFive = new Waypoint({
+      element: document.getElementById('div24'),
+      handler: function (direction) {
+        updateThree();
+
+
+        if(window.innerWidth >= 1024) {
+          forceStressBubble();
+          console.log("SVG");
+        } else {
+          forceStressBubbleTwo();
+          console.log("CANVAS");
+         }
+      },
+      // offset: '50%'
+      offset: '10%'
+    })
+
+
+    var waypointResetBubbleTwo = new Waypoint({
+      element: document.getElementById('div24'),
+      handler: resetVizBubbleStress,
+      // offset: "90%",
+      offset: "10%",
+      // offset: "bottom-in-view"
+    })
+
+
+
+    var waypointSix = new Waypoint({
+      element: document.getElementById('div29'),
+      handler: function (direction) {
+        updateTwoTwo();
+        stressDot();
+      },
+      offset: '50%'
+    })
+
+
+
+    ///////////////////////////////////////////////////////////// EYES
+
+    var waypointKillEyes = new Waypoint({
+      element: document.getElementById('div32'),
+      handler: killEyes,
+      offset: "50%",
+      // offset: "bottom-in-view"
+    })
+
+
+    var waypointSeven = new Waypoint({
+      element: document.getElementById('div34'),
+      handler: function (direction) {
+        // updateTwo();
+        eyes();
+      },
+      offset: '10%'
+    })
+
+
+    var waypointResetEyes = new Waypoint({
+      element: document.getElementById('div34'),
+      handler: resetVizEyes,
+      offset: "50%"
+      // offset: "bottom-in-view"
+    })
+
+
+
+    var waypointEight = new Waypoint({
+      element: document.getElementById('div40'),
+      handler: function (direction) {
+        updateFour();
+
+        if(window.innerWidth >= 1024) {
+          forceEyesBubble();
+          console.log("SVG");
+        } else {
+          forceEyesBubbleTwo();
+          console.log("CANVAS");
+         }
+      },
+      // offset: '50%'
+      offset: '10%'
+    })
+
+
+    var waypointResetBubbleThree = new Waypoint({
+      element: document.getElementById('div40'),
+      handler: resetVizBubbleEyes,
+      // offset: "90%",
+      // offset: "bottom-in-view"
+      offset: "10%"
+    })
+
+
+    var waypointNine = new Waypoint({
+      element: document.getElementById('div45'),
+      handler: function (direction) {
+        updateTwoThree();
+        eyesDot();
+      },
+      // offset: '50%'
+      offset: '10%'
+    })
+
+
+
+  ///////////////////////////////////////////////////////////// TABLE
+
+
+    // var waypointTen = new Waypoint({
+    //     element: document.getElementById('div50'),
+    //     handler: function (direction) {
+    //         // updateTwo();
+    //         table();
+    //     },
+    //     offset: '50%'
+    // })
+
+
+  </script>
+
+
+
+</body>
+
+</html>
+
+{% endblock %}

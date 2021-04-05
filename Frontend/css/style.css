@@ -1,0 +1,648 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+a, a:visited {
+  color: #4d4d4d;
+  text-decoration: underline;
+}
+
+#container {
+  width: 940px;
+  padding: 5px 0 10px 0;
+  margin: auto;
+}
+
+
+#main {
+  clear: both;
+}
+
+
+#controls {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.control {
+  float: left;
+  padding-left: 20px;
+}
+
+.control a {
+  color: black;
+  font-size: 12px;
+  padding: 5px;
+  background: #E2E2E2;
+  cursor: pointer;
+  margin-right: 3px;
+  text-decoration: none;
+}
+
+.control a:hover {
+  text-decoration: underline;
+}
+
+.control a.active {
+  color: white;
+  background: #555;
+}
+
+#leaflyTitle {
+  position: absolute;
+  top: 10px;
+  left: 400px;
+}
+
+#state_selection {
+  position: absolute;
+  top: 50px;
+}
+
+/* Dropdown*/
+.col-md-4 {
+  text-align: center;
+  top: 50px;
+}
+
+#country {
+  position: absolute;
+  font-size: 15px;
+    top: -20px;
+  left: 50px;
+}
+
+#state {
+  position: absolute;
+  font-size: 15px;
+  top: -40px;
+  left: 350px;
+}
+
+#city {
+  position: absolute;
+  font-size: 15px;
+  top: -20px;
+  left: 700px;
+}
+
+#state-dropdown {
+  position: absolute;
+  top: 20px;
+  left: 350px;
+}
+
+#city-dropdown {
+  position: absolute;
+  top: 10px;
+  left: 700px;
+}
+
+/* Dropdown*/
+/*.dropdown {
+  position: absolute;
+  top: 50px;
+  left: 175px;
+}*/
+
+
+#phenotypes {
+  position: absolute;
+  top: 150px;
+}
+
+#thc {
+  position: absolute;
+  top: 150px;
+  left: 400px;
+}
+
+
+/*.slidecontainer {
+  width: 50%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 24px;
+  border: 0;
+  background: url('pot.jpeg');
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 23px;
+  height: 24px;
+  border: 0;
+  background: url('pot.jpeg');
+  cursor: pointer;
+}*/
+
+
+#search_section {
+  position: absolute;
+  top: 170px;
+  left: 800px;
+}
+
+
+/*p.search_title {
+  display: inline;
+  text-align: left;  
+  font-weight: normal;
+  color: #777;
+}
+
+#search_section {
+  padding-top: 23px;
+  padding-left: 20px;
+}
+
+#search_form #search {
+  margin-left: 10px;
+}*/
+
+
+/*table*/
+
+#tableID {
+  position: relative;
+  width: 100%;
+  margin-top: 350px;
+  overflow-x: scroll;
+  font-size: 15px;
+}
+
+.divScroll {
+  overflow-y: scroll;
+  width: 10px;
+  height: 500px;
+}
+
+th {
+  background-color: white;
+  color: black;
+  height: 10px;
+  vertical-align: bottom;
+  text-align: left;
+  padding: 1px 4px;
+}
+
+
+td {
+  height: 50px;
+  vertical-align: bottom;
+  text-align: left;
+  padding: 1px 4px;
+}
+
+
+tr:hover {background-color: #f5f5f5;}
+
+tr:nth-child(odd) {background-color: #f2f2f2;}
+
+
+tbody tr:first-child td,
+text {
+  font-weight: bold;
+}
+
+.row {
+  margin-top: 50px;
+}
+
+#select3 {
+  position: relative;
+  height: 32px;
+  font-size: 15px;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 300px;
+  float: left;
+}
+
+#select4 {
+  position: relative;
+  height: 32px;
+  font-size: 15px;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 300px;
+  float: left;
+}
+
+#select5 {
+  position: relative;
+  height: 32px;
+  font-size: 15px;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 300px;
+  float: left;
+}
+
+#nameTable {
+  color: grey;
+}
+
+#ratingTable {
+  color: grey;
+}
+
+#reviewTable {
+  color: grey;
+}
+
+#phenotypeTable {
+  color: grey;
+}
+
+#thcTable {
+  color: grey;
+}
+
+#cbdTable {
+  color: grey;
+}
+
+#cityTable {
+  color: grey;
+}
+
+#stateTable {
+  color: grey;
+}
+
+#countryTable {
+  color: grey;
+}
+
+#adhdTable {
+  color: grey;
+}
+
+#anorexiaTable {
+  color: grey;
+}
+
+#anxietyTable {
+  color: grey;
+}
+
+#anxiousTable {
+  color: grey;
+}
+
+#arousedTable {
+  color: grey;
+}
+
+#arthritisTable {
+  color: grey;
+}
+
+#asthmaTable {
+  color: grey;
+}
+
+#cancerTable {
+  color: grey;
+}
+
+#crampsTable {
+  color: grey;
+}
+
+#creativeTable {
+  color: grey;
+}
+
+#depressionTable {
+  color: grey;
+}
+
+#dizzyTable {
+  color: grey;
+}
+
+#energeticTable {
+  color: grey;
+}
+
+#epilepsyTable {
+  color: grey;
+}
+
+#euphoricTable {
+  color: grey;
+}
+
+#fatigueTable {
+  color: grey;
+}
+
+#fibromyalgiaTable {
+  color: grey;
+}
+
+#focusedTable {
+  color: grey;
+}
+
+#gigglyTable {
+  color: grey;
+}
+
+#happyTable {
+  color: grey;
+}
+
+#headacheTable {
+  color: grey;
+}
+
+#headachesTable {
+  color: grey;
+}
+
+#hungryTable {
+  color: grey;
+}
+
+#hypertensionTable {
+  color: grey;
+}
+
+#inflammationTable {
+  color: grey;
+}
+
+#insomniaTable {
+  color: grey;
+}
+
+#migrainesTable {
+  color: grey;
+}
+
+#nauseaTable {
+  color: grey;
+}
+
+#pmsTable {
+  color: grey;
+}
+
+#ptsdTable {
+  color: grey;
+}
+
+#painTable {
+  color: grey;
+}
+
+#paranoidTable {
+  color: grey;
+}
+
+#relaxedTable {
+  color: grey;
+}
+
+#seizuresTable {
+  color: grey;
+}
+
+#sleepyTable {
+  color: grey;
+}
+
+#spasticityTable {
+  color: grey;
+}
+
+#stressTable {
+  color: grey;
+}
+
+#talkativeTable {
+  color: grey;
+}
+
+#tinglyTable {
+  color: grey;
+}
+
+#upliftedTable {
+  color: grey;
+}
+
+#appetiteTable {
+  color: grey;
+}
+
+#diseaseTable {
+  color: grey;
+}
+
+#disorderTable {
+  color: grey;
+}
+
+#eyesTable {
+  color: grey;
+}
+
+#injuryTable {
+  color: grey;
+}
+
+#mouthTable {
+  color: grey;
+}
+
+#pressureTable {
+  color: grey;
+}
+
+#sclerosisTable {
+  color: grey;
+}
+
+#spasmsTable {
+  color: grey;
+}
+
+
+
+
+
+/*Buttons*/
+
+#hybridButton {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+}
+
+#sativaButton {
+  position: absolute;
+  top: 200px;
+  left: 300px
+}
+
+#indicaButton {
+  position: absolute;
+  top: 200px;
+  left: 400px;
+}
+
+
+
+
+/*Slider*/
+
+#sliderLabel {
+  position: absolute;
+  top: 250px;
+  left: 600px;
+}
+
+#sliderAmount {
+  position: absolute;
+  top: 250px;
+  left: 680px;
+}
+
+#slider-range {
+  position: absolute;
+  width: 300px;
+  margin-top: 10px;
+  position: absolute;
+  top: 300px;
+  left: 600px;
+}
+
+
+#slider-range, #slider-range2 {
+  width:300px;
+  margin-top:10px;
+}
+
+#slider-range2.ui-slider-horizontal {
+    border: 0 none;
+}
+
+#slider-range2.ui-slider-horizontal .ui-slider-range, #slider-range2.ui-slider-horizontal .ui-slider-handle {
+    background: url("http://unbug.ru/examples/jquery/slider/slide.png") repeat scroll 0 0 transparent;
+}
+
+#slider-range2.ui-slider-horizontal .ui-slider-range {
+    background-position: 0 -42px;
+    background-repeat: repeat-x;
+    height: 21px;
+}
+
+#slider-range2.ui-slider-horizontal .ui-slider-handle {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 0 none;
+    height: 21px;
+    top: 0;
+    width: 21px;
+}
+
+#slider-range2.ui-slider-horizontal .ui-slider-handle:focus {
+    outline: 0 none;
+}
+
+#slider-range2.ui-slider-horizontal .ui-slider-handle + .ui-slider-handle {
+    background-position: -21px 0;
+}
+
+
+/*Search*/
+#myInput {
+/*  background-image: url('/css/search_icon.jpg');*/
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  /*width: 100%;*/
+  width: 200px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  position: absolute;
+  top: 300px;
+  left: 200px;
+}
+
+
+
+
+
+
+footer p {
+  text-align: center;
+}
+
+/*.tooltip {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  -moz-border-radius:3px;
+  border-radius: 3px;
+  border: 2px solid #DDD;
+  background: #fff;
+  opacity: 1;
+  color: #000;
+  padding: 10px;
+  width: 300px;
+  font-size: 15px;
+  z-index: 120;
+}
+
+.tooltip p.main {
+  font-size: 15px;
+  text-align: center;
+  padding:0;
+  margin:0;
+}
+
+hr.tooltip-hr {
+  padding:3px 0 0 0;
+  margin:3px 0 3px 0;
+}
+
+.tooltip .title {
+  font-size: 20px;
+  line-height: 24px;
+}
+ 
+.tooltip .name {
+  font-weight:bold;
+}*/
+
+
+line.link {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
